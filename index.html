@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday, Anh</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: 'Segoe UI', sans-serif;
+    overflow-x:hidden;
+    color:white;
+    min-height:100vh;
+}
+
+.background{
+    position:fixed;
+    inset:0;
+    background:url('anh.jpg') center center/cover no-repeat;
+    z-index:-2;
+}
+
+.overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.55);
+    z-index:-1;
+}
+
+.container{
+    max-width:800px;
+    margin:auto;
+    padding:40px 20px;
+    text-align:center;
+}
+
+h1{
+    font-size:42px;
+    margin-top:30px;
+    margin-bottom:10px;
+}
+
+.date{
+    font-size:20px;
+    opacity:0.9;
+    margin-bottom:40px;
+}
+
+.card{
+    background:rgba(255,255,255,0.12);
+    backdrop-filter:blur(8px);
+    border-radius:24px;
+    padding:35px;
+    line-height:1.9;
+    font-size:18px;
+}
+
+.paragraph{
+    opacity:0;
+    transform:translateY(20px);
+    animation:fadeUp 1s forwards;
+}
+
+.paragraph:nth-child(1){animation-delay:1s;}
+.paragraph:nth-child(2){animation-delay:3s;}
+.paragraph:nth-child(3){animation-delay:5s;}
+.paragraph:nth-child(4){animation-delay:7s;}
+.paragraph:nth-child(5){animation-delay:9s;}
+.paragraph:nth-child(6){animation-delay:11s;}
+
+.signature{
+    margin-top:25px;
+    font-size:22px;
+}
+
+.music-btn{
+    margin-top:25px;
+    padding:12px 24px;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+@keyframes fadeUp{
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.floating{
+    position:fixed;
+    color:white;
+    animation:float 8s linear infinite;
+    opacity:0.7;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(100vh);
+    }
+    to{
+        transform:translateY(-100px);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="background"></div>
+<div class="overlay"></div>
+
+<div class="container">
+
+<h1>🎂 Happy Birthday, Anh</h1>
+<div class="date">20.06</div>
+
+<button class="music-btn" onclick="playMusic()">
+🎵 Bật nhạc
+</button>
+
+<div class="card">
+
+<p class="paragraph">
+Chúc Anh có một ngày sinh nhật thật nhiều niềm vui và một tuổi mới thật nhiều điều đáng mong đợi.
+</p>
+
+<br>
+
+<p class="paragraph">
+Em không biết tương lai sẽ như thế nào, nhưng em thấy thật may vì trong khoảng thời gian này, chúng ta đã có cơ hội gặp gỡ và đồng hành cùng nhau trong những câu chuyện thường ngày.
+</p>
+
+<br>
+
+<p class="paragraph">
+Cảm ơn Anh vì đã khiến những cuộc trò chuyện trở nên thú vị hơn, những ngày bình thường trở nên dễ chịu hơn một chút.
+</p>
+
+<br>
+
+<p class="paragraph">
+Tuổi mới rồi, em chúc Anh luôn mạnh khỏe, giữ được sự nhiệt huyết với những điều mình yêu thích và gặp nhiều may mắn trên con đường phía trước. Mong những điều Anh đang cố gắng hôm nay sẽ sớm mang lại những kết quả xứng đáng.
+</p>
+
+<br>
+
+<p class="paragraph">
+Còn về món quà sinh nhật năm nay, em hy vọng khi Anh nhìn thấy tấm thiệp này, Anh sẽ biết rằng có một người đang thật lòng chúc Anh những điều tốt đẹp nhất.
+</p>
+
+<br>
+
+<p class="paragraph">
+Và em cũng hy vọng rằng, phía trước sẽ còn nhiều cơ hội để chúng ta có thêm những kỷ niệm đẹp cùng nhau.
+</p>
+
+<div class="signature">
+✨ Chúc mừng sinh nhật Anh.<br><br>
+— Huyền ❤️
+</div>
+
+</div>
+</div>
+
+<audio id="music" loop>
+<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8a4f2c8e2.mp3?filename=happy-birthday-piano-version-112194.mp3">
+</audio>
+
+<script>
+function playMusic(){
+    document.getElementById("music").play();
+}
+
+for(let i=0;i<30;i++){
+    let s=document.createElement("div");
+    s.className="floating";
+    s.innerHTML="✨";
+    s.style.left=Math.random()*100+"%";
+    s.style.fontSize=(15+Math.random()*20)+"px";
+    s.style.animationDuration=(5+Math.random()*10)+"s";
+    document.body.appendChild(s);
+}
+</script>
+
+</body>
+</html>
